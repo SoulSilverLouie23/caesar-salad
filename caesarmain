@@ -1,0 +1,37 @@
+#this is the caesar algorigthm for encryption
+
+import string
+
+def testingEnv(phrase, shift):
+    '''you have to define the container for the new set of characters outside the loop otherwise you're emptying your container'''
+    storage=""
+    for i in range(len(phrase)):
+        #these are the characters themselves being passed through a for loop
+        chara= phrase[i]
+        #named chara to avoid confusing it with chr the data type
+
+    #chara is already pinpointing to the current letter in in the list of characters within the limits of lengthOfString
+        if (chara.isupper()):
+            storage+=chr((ord(chara)+shift-65)%26+65) 
+    #you dont pass the i directly as the ord because i is an integer the reason you need it at all is to conver the char into its ascii number
+        elif(chara.islower()):
+            storage+=chr((ord(chara)+shift-97)%26+97)
+        else:
+            #leaves other characters that arent alphabetical letters untouched
+            storage+=chara
+    '''i would like to leave things that aren't those unchanged but '''
+    return(storage) 
+#"".join([string,string]) makes no sense but it was the only way I could find to append something into something
+
+
+
+
+prompt="enter your text here: \n"
+text=input(prompt)
+
+prompt2="What's your caesar shift number? \n"
+caesarShift=input(prompt2)
+#you must specify caesar shif as an integer otherwise strings are the default
+myMessage=testingEnv(text,int(caesarShift))
+print(myMessage)
+
