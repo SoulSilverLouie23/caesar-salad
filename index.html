@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zero-Budget Income App Builder</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Zero-Budget Income App Builder</h1>
+    <p class="subtitle">Plan a no-investment app idea, offer, and launch checklist in under 2 minutes.</p>
+
+    <section class="card">
+      <h2>1) Pick your niche</h2>
+      <label for="niche">Niche you understand</label>
+      <input id="niche" placeholder="e.g., local restaurants, pet owners, job seekers" />
+
+      <label for="skill">Your strongest skill</label>
+      <select id="skill">
+        <option value="writing">Writing</option>
+        <option value="design">Design</option>
+        <option value="coding">Coding</option>
+        <option value="marketing">Marketing</option>
+        <option value="research">Research</option>
+      </select>
+
+      <label for="hours">Hours/week available</label>
+      <input id="hours" type="number" min="1" max="40" value="6" />
+
+      <button id="generateBtn">Generate plan</button>
+    </section>
+
+    <section class="card hidden" id="outputCard">
+      <h2>2) Your money-making app concept</h2>
+      <div id="output"></div>
+      <button id="copyBtn">Copy plan</button>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
